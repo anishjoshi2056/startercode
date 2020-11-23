@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -18,9 +17,8 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 
 //Routes 
-
-
-
+const homepageRoute = require('./src/routes/homepage');
+app.use('/',homepageRoute);
 //
 
 app.listen(port,()=>{
